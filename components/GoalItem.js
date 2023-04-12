@@ -16,7 +16,7 @@ export default function GoalItem({ text, onDeleteItem, id }) {
 const styles = StyleSheet.create({
   goalItem: {
     marginHorizontal: 2,
-    marginVertical: 5,
+    marginTop: 10,
     backgroundColor: "#7ff5b6",
     borderRadius: 10,
   },
