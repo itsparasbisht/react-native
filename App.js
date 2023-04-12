@@ -30,36 +30,38 @@ export default function App() {
   }
 
   return (
-    <View style={styles.appContainer}>
-      <Button title="Add New Goal" color="black" onPress={handleOpenModal} />
-      <GoalInput
-        onAddGoal={addGoalHandler}
-        openModal={openModal}
-        closeModal={handleCloseModal}
-      />
-      <View style={styles.goalsContainer}>
-        <FlatList
-          data={goals}
-          keyExtractor={(goal) => goal.id}
-          renderItem={(goalData) => {
-            return (
-              <GoalItem
-                text={goalData.item.text}
-                onDeleteItem={deleteGoalHandler}
-                id={goalData.item.id}
-              />
-            );
-          }}
+    <>
+      <View style={styles.appContainer}>
+        <Button title="Add New Goal" color="black" onPress={handleOpenModal} />
+        <GoalInput
+          onAddGoal={addGoalHandler}
+          openModal={openModal}
+          closeModal={handleCloseModal}
         />
+        <View style={styles.goalsContainer}>
+          <FlatList
+            data={goals}
+            keyExtractor={(goal) => goal.id}
+            renderItem={(goalData) => {
+              return (
+                <GoalItem
+                  text={goalData.item.text}
+                  onDeleteItem={deleteGoalHandler}
+                  id={goalData.item.id}
+                />
+              );
+            }}
+          />
+        </View>
       </View>
-    </View>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   appContainer: {
     flex: 1,
-    paddingTop: 50,
+    paddingTop: 30,
     paddingHorizontal: 16,
   },
   goalsContainer: {
